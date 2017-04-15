@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="nodes," />
 
 
 
@@ -88,13 +88,13 @@
 
 
 <meta name="description" content="JSP基础知识笔记">
-<meta name="keywords">
+<meta name="keywords" content="nodes">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JSP">
 <meta property="og:url" content="http://PPPeanut.github.io/2017/04/15/JSP/index.html">
 <meta property="og:site_name" content="JJ的博客">
 <meta property="og:description" content="JSP基础知识笔记">
-<meta property="og:updated_time" content="2017-04-15T11:37:22.462Z">
+<meta property="og:updated_time" content="2017-04-15T14:33:23.363Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSP">
 <meta name="twitter:description" content="JSP基础知识笔记">
@@ -388,7 +388,7 @@
 <li>include指令：将一个外部文件嵌入当前jsp文件中，同时解析这个页面的jsp语句；</li>
 <li>taglib指令：使用标签库定义新的自定义标签,在jsp页面中启动定制行为；</li>
 </ul>
-<h2 id="SP注释"><a href="#SP注释" class="headerlink" title="SP注释"></a>SP注释</h2><figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="xml">//1.html的注释,客户端可见</span></div><div class="line"><span class="comment">&lt;!--html注释--&gt;</span></div><div class="line"></div><div class="line">//2.jsp的注释,客户端不可见</div><div class="line"><span class="tag">&lt;<span class="name">%-</span></span><span class="ruby">-jsp注释-</span><span class="xml"><span class="tag"><span class="attr">-</span>%&gt;</span></span></div><div class="line"></div><div class="line">//3.jsp脚本注释,也是客户端不可见</div><div class="line">单行注释//</div><div class="line">多行注释/**/</div></pre></td></tr></table></figure>
+<h2 id="SP注释"><a href="#SP注释" class="headerlink" title="SP注释"></a>SP注释</h2><figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="xml">//1.html的注释,客户端可见,用<span class="comment">&lt;!-- --&gt;</span>注释是不影响代码在服务端执行,也就是没有作用</span></div><div class="line"><span class="comment">&lt;!--html注释--&gt;</span></div><div class="line"></div><div class="line">//2.jsp的注释,客户端不可见</div><div class="line"><span class="tag">&lt;<span class="name">%-</span></span><span class="ruby">-jsp注释-</span><span class="xml"><span class="tag"><span class="attr">-</span>%&gt;</span></span></div><div class="line"></div><div class="line">//3.jsp脚本注释,也是客户端不可见</div><div class="line">单行注释//</div><div class="line">多行注释/**/</div></pre></td></tr></table></figure>
 <h2 id="JSP语法"><a href="#JSP语法" class="headerlink" title="JSP语法"></a>JSP语法</h2><figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//jsp脚本,在jsp页面中执行的java代码</span></div><div class="line">&lt;<span class="meta">%</span>java代码<span class="meta">%</span>&gt;</div><div class="line"></div><div class="line"><span class="comment">//jsp声明，在jsp页面中定义变量或者方法</span></div><div class="line">&lt;<span class="meta">%</span>!java代码<span class="meta">%</span>&gt;</div><div class="line"></div><div class="line"><span class="comment">//jsp表达式，在jsp页面中执行的表达式</span></div><div class="line">&lt;<span class="meta">%</span>=表达式<span class="meta">%</span>&gt;</div></pre></td></tr></table></figure>
 <p><br><br><br></p>
 <h1 id="JSP九大内置对象"><a href="#JSP九大内置对象" class="headerlink" title="JSP九大内置对象"></a>JSP九大内置对象</h1><p>jsp内置对象是web容器创建的一组对象，不使用new关键就可以使用的内置对象。</p>
@@ -446,6 +446,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/nodes/" rel="tag"># nodes</a>
+          
+        </div>
+      
 
       
         
@@ -454,6 +460,10 @@
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/15/javabean/" rel="next" title="JavaBean">
+                <i class="fa fa-chevron-left"></i> JavaBean
+              </a>
             
           </div>
 
@@ -535,7 +545,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -548,7 +558,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
