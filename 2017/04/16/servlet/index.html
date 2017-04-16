@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="-notes," />
+  <meta name="keywords" content="notes," />
 
 
 
@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="http协议的无状态性无状态是指当浏览器发送请求给服务器时，服务器响应客户端请求。但是当同一个浏览器再次发送请求给服务器时，服务器并不知道它是刚才那个服务器。">
-<meta name="keywords" content="-notes">
+<meta name="description" content="servlet是在服务器上运行的小程序。一个servlet就是一个java类，并且可以通过“请求-响应”编程模型来访问的这个驻留在服务器内存里的servlet程序。">
+<meta name="keywords" content="notes">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jsp的状态管理">
-<meta property="og:url" content="http://PPPeanut.github.io/2017/04/15/jspState/index.html">
+<meta property="og:title" content="Servlet">
+<meta property="og:url" content="http://PPPeanut.github.io/2017/04/16/servlet/index.html">
 <meta property="og:site_name" content="JJ的博客">
-<meta property="og:description" content="http协议的无状态性无状态是指当浏览器发送请求给服务器时，服务器响应客户端请求。但是当同一个浏览器再次发送请求给服务器时，服务器并不知道它是刚才那个服务器。">
-<meta property="og:updated_time" content="2017-04-15T14:15:23.108Z">
+<meta property="og:description" content="servlet是在服务器上运行的小程序。一个servlet就是一个java类，并且可以通过“请求-响应”编程模型来访问的这个驻留在服务器内存里的servlet程序。">
+<meta property="og:updated_time" content="2017-04-16T01:54:45.115Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jsp的状态管理">
-<meta name="twitter:description" content="http协议的无状态性无状态是指当浏览器发送请求给服务器时，服务器响应客户端请求。但是当同一个浏览器再次发送请求给服务器时，服务器并不知道它是刚才那个服务器。">
+<meta name="twitter:title" content="Servlet">
+<meta name="twitter:description" content="servlet是在服务器上运行的小程序。一个servlet就是一个java类，并且可以通过“请求-响应”编程模型来访问的这个驻留在服务器内存里的servlet程序。">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://PPPeanut.github.io/2017/04/15/jspState/"/>
+  <link rel="canonical" href="http://PPPeanut.github.io/2017/04/16/servlet/"/>
 
 
 
 
 
-  <title> jsp的状态管理 | JJ的博客 </title>
+  <title> Servlet | JJ的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -270,7 +270,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://PPPeanut.github.io/2017/04/15/jspState/">
+    <link itemprop="mainEntityOfPage" href="http://PPPeanut.github.io/2017/04/16/servlet/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Peanut">
@@ -291,7 +291,7 @@
             
             
               
-                jsp的状态管理
+                Servlet
               
             
           </h1>
@@ -306,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-15T21:28:27+08:00">
-                2017-04-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-16T09:21:06+08:00">
+                2017-04-16
               </time>
             
 
@@ -342,69 +342,66 @@
       
 
       
-        <p>http协议的无状态性<br>无状态是指当浏览器发送请求给服务器时，服务器响应客户端请求。<br>但是当同一个浏览器再次发送请求给服务器时，服务器并不知道它是刚才那个服务器。<br><a id="more"></a></p>
-<h2 id="保护用户的状态的两大机制"><a href="#保护用户的状态的两大机制" class="headerlink" title="保护用户的状态的两大机制"></a>保护用户的状态的两大机制</h2><ul>
-<li>Session</li>
-<li>Cookie</li>
+        <p>servlet是在服务器上运行的小程序。一个servlet就是一个java类，并且可以通过“请求-响应”编程模型来访问的这个驻留在服务器内存里的servlet程序。<br><a id="more"></a></p>
+<h2 id="Servlet的生命周期"><a href="#Servlet的生命周期" class="headerlink" title="Servlet的生命周期"></a>Servlet的生命周期</h2><p>Servlet的生命周期包括初始化、加载、实例化、服务和销毁。</p>
+<h3 id="启动Servlet的三种方法"><a href="#启动Servlet的三种方法" class="headerlink" title="启动Servlet的三种方法"></a>启动Servlet的三种方法</h3><ul>
+<li>Servlet容器启动时自动装载某些Servlet，实现它只需要在web.xml文件中的<servlet></servlet>之间添加如下代码:<loadon-startup>1</loadon-startup>数字越小表示优先级越高。</li>
+<li>在Servlet容器启动后，客户首次向Servlet发送请求。</li>
+<li>Servlet被装载后，Servlet容器创建一个Servlet实例并且调用Servlet的init()方法进行初始化。在Servlet的整个生命周期内，init()方法只被调用一次。</li>
 </ul>
-<h2 id="Session和Cookie的对比"><a href="#Session和Cookie的对比" class="headerlink" title="Session和Cookie的对比"></a>Session和Cookie的对比</h2><table>
+<h2 id="Servlet和九大内置对象"><a href="#Servlet和九大内置对象" class="headerlink" title="Servlet和九大内置对象"></a>Servlet和九大内置对象</h2><table>
 <thead>
 <tr>
-<th style="text-align:left">session</th>
-<th style="text-align:left">cookie</th>
+<th style="text-align:center">JSP</th>
+<th style="text-align:center">怎样获得</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">在<strong>服务器</strong>端保存用户信息</td>
-<td style="text-align:left">在<strong>客户端</strong>保存用户信息</td>
+<td style="text-align:center">out</td>
+<td style="text-align:center">resp.getWriter</td>
 </tr>
 <tr>
-<td style="text-align:left">session中保存的是<strong>Object</strong>类型</td>
-<td style="text-align:left">cookie保存的是<strong>String</strong>类型</td>
+<td style="text-align:center">request</td>
+<td style="text-align:center">service方法中的req参数</td>
 </tr>
 <tr>
-<td style="text-align:left">随会话的结束而将其存储的数据<strong>销毁</strong></td>
-<td style="text-align:left">cookie可以<strong>长期</strong>保存在客户端</td>
+<td style="text-align:center">response</td>
+<td style="text-align:center">service方法中的resp参数</td>
 </tr>
 <tr>
-<td style="text-align:left">保存<strong>重要</strong>信息</td>
-<td style="text-align:left">保存<strong>不重要</strong>的信息</td>
+<td style="text-align:center">session</td>
+<td style="text-align:center">req.session()函数</td>
+</tr>
+<tr>
+<td style="text-align:center">application</td>
+<td style="text-align:center">getServletContext函数</td>
+</tr>
+<tr>
+<td style="text-align:center">exception</td>
+<td style="text-align:center">Throwable</td>
+</tr>
+<tr>
+<td style="text-align:center">page</td>
+<td style="text-align:center">this</td>
+</tr>
+<tr>
+<td style="text-align:center">pageContext</td>
+<td style="text-align:center">PageContext</td>
+</tr>
+<tr>
+<td style="text-align:center">config</td>
+<td style="text-align:center">getServletConfig函数</td>
 </tr>
 </tbody>
 </table>
-<h2 id="cookie的作用"><a href="#cookie的作用" class="headerlink" title="cookie的作用"></a>cookie的作用</h2><p>1.对特定对象的追踪<br>2.保存用户网页浏览记录和习惯<br>安全风险：容易泄露用户信息</p>
-<h2 id="jsp中创建与使用Cookie"><a href="#jsp中创建与使用Cookie" class="headerlink" title="jsp中创建与使用Cookie"></a>jsp中创建与使用Cookie</h2><figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建Cookie对象</span></div><div class="line">Cookie <span class="keyword">new</span><span class="type">Cookie</span>=<span class="keyword">new</span> <span class="type">Cookie</span>(<span class="keyword">String</span> key,Object value);</div><div class="line"><span class="comment">//写入Cookie对象</span></div><div class="line">response.addCookie(<span class="keyword">new</span><span class="type">Cookie</span>);</div><div class="line"><span class="comment">//读取Cookie</span></div><div class="line">Cookie[]cookies=request.getCookies();</div></pre></td></tr></table></figure>
-<h2 id="Cookie的常用方法"><a href="#Cookie的常用方法" class="headerlink" title="Cookie的常用方法"></a>Cookie的常用方法</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">方法名称</th>
-<th style="text-align:center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">void setMaxAge(int expiry)</td>
-<td style="text-align:center">设置cookie的有效期，以秒为单位</td>
-</tr>
-<tr>
-<td style="text-align:center">void setValue(String value)</td>
-<td style="text-align:center">在cookie创建后，对cookie进行赋值</td>
-</tr>
-<tr>
-<td style="text-align:center">String getName()</td>
-<td style="text-align:center">获取cookie的名称</td>
-</tr>
-<tr>
-<td style="text-align:center">String getValue()</td>
-<td style="text-align:center">获取cookie的值</td>
-</tr>
-<tr>
-<td style="text-align:center">int getMaxAge()</td>
-<td style="text-align:center">获取cookie的有效时间，以秒为单位</td>
-</tr>
-</tbody>
-</table>
+<h2 id="路径跳转"><a href="#路径跳转" class="headerlink" title="路径跳转"></a>路径跳转</h2><ul>
+<li>页面中的/代表服务器根目录</li>
+<li>web.xml中/代表项目根目录</li>
+<li>请求重定向的/代表服务器根目录</li>
+<li>请求转发的/代表项目根目录</li>
+</ul>
+<h2 id="Servlet中获取初始化参数"><a href="#Servlet中获取初始化参数" class="headerlink" title="Servlet中获取初始化参数"></a>Servlet中获取初始化参数</h2><p>在web.xml中配置Servlet时，可以配置一些初始化参数。而在Servlet中可以通过ServletConfig接口提供的方法来取得这些参数。<br><figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//在web.xml中</span></div><div class="line"> &lt;servlet&gt;</div><div class="line">    ...</div><div class="line">    &lt;init-<span class="built_in">param</span>&gt;</div><div class="line">      &lt;<span class="built_in">param</span>-<span class="built_in">name</span>&gt;username&lt;/<span class="built_in">param</span>-<span class="built_in">name</span>&gt;</div><div class="line">      &lt;<span class="built_in">param</span>-value&gt;admin&lt;/<span class="built_in">param</span>-value&gt;</div><div class="line">    &lt;/init-<span class="built_in">param</span>&gt;</div><div class="line">    &lt;init-<span class="built_in">param</span>&gt;</div><div class="line">      &lt;<span class="built_in">param</span>-<span class="built_in">name</span>&gt;password&lt;/<span class="built_in">param</span>-<span class="built_in">name</span>&gt;</div><div class="line">      &lt;<span class="built_in">param</span>-value&gt;<span class="number">123456</span>&lt;/<span class="built_in">param</span>-value&gt;</div><div class="line">    &lt;/init-<span class="built_in">param</span>&gt;</div><div class="line">  &lt;/servlet&gt;</div><div class="line"><span class="comment">//Servlet中</span></div><div class="line">this.getInitParameter(<span class="string">"username"</span>);</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -434,7 +431,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/notes/" rel="tag"># -notes</a>
+            <a href="/tags/notes/" rel="tag"># notes</a>
           
         </div>
       
@@ -447,18 +444,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/16/servlet/" rel="next" title="Servlet">
-                <i class="fa fa-chevron-left"></i> Servlet
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/15/jspAction/" rel="prev" title="JSP指令与动作">
-                JSP指令与动作 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/15/jspState/" rel="prev" title="jsp的状态管理">
+                jsp的状态管理 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -579,7 +572,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#保护用户的状态的两大机制"><span class="nav-number">1.</span> <span class="nav-text">保护用户的状态的两大机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Session和Cookie的对比"><span class="nav-number">2.</span> <span class="nav-text">Session和Cookie的对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie的作用"><span class="nav-number">3.</span> <span class="nav-text">cookie的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp中创建与使用Cookie"><span class="nav-number">4.</span> <span class="nav-text">jsp中创建与使用Cookie</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie的常用方法"><span class="nav-number">5.</span> <span class="nav-text">Cookie的常用方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet的生命周期"><span class="nav-number">1.</span> <span class="nav-text">Servlet的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动Servlet的三种方法"><span class="nav-number">1.1.</span> <span class="nav-text">启动Servlet的三种方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet和九大内置对象"><span class="nav-number">2.</span> <span class="nav-text">Servlet和九大内置对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路径跳转"><span class="nav-number">3.</span> <span class="nav-text">路径跳转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet中获取初始化参数"><span class="nav-number">4.</span> <span class="nav-text">Servlet中获取初始化参数</span></a></li></ol></div>
             
 
           </div>
