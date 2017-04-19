@@ -94,7 +94,7 @@
 <meta property="og:url" content="http://PPPeanut.github.io/2017/04/18/webListener/index.html">
 <meta property="og:site_name" content="JJ的博客">
 <meta property="og:description" content="Web监听器是Servlet规范中定义的一种特殊类。它常应用于三个方面，分别是用于监听ServletContext、HttpSession和ServletRequest等域对象的创建与销毁事件，用于监听域对象的属性发生修改的事件，还可以在事件发生前、发生后做一些必要的处理。">
-<meta property="og:updated_time" content="2017-04-18T14:20:05.017Z">
+<meta property="og:updated_time" content="2017-04-19T10:23:42.299Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web监听器">
 <meta name="twitter:description" content="Web监听器是Servlet规范中定义的一种特殊类。它常应用于三个方面，分别是用于监听ServletContext、HttpSession和ServletRequest等域对象的创建与销毁事件，用于监听域对象的属性发生修改的事件，还可以在事件发生前、发生后做一些必要的处理。">
@@ -354,6 +354,12 @@
 
       
         <p>Web监听器是Servlet规范中定义的一种特殊类。它常应用于三个方面，分别是用于监听ServletContext、HttpSession和ServletRequest等域对象的创建与销毁事件，用于监听域对象的属性发生修改的事件，还可以在事件发生前、发生后做一些必要的处理。<br><a id="more"></a></p>
+<h1 id="Web监听器的用途"><a href="#Web监听器的用途" class="headerlink" title="Web监听器的用途"></a>Web监听器的用途</h1><p>1.统计在线人数和在线用户<br>2.系统启动时加载初始化信息<br>3.统计观战访问量<br>4.跟Spring结合</p>
+<h1 id="在xml中注册"><a href="#在xml中注册" class="headerlink" title="在xml中注册"></a>在xml中注册</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">listener</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">listener-class</span>&gt;</span>监听类的完整类名<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">listener</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h1><p>在web.xml中有多个监听器，优先级按从上到下的顺序。</p>
+<ul>
+<li>监听器的优先级&gt;过滤器&gt;Servlet</li>
+</ul>
 
       
     </div>
@@ -451,8 +457,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/123.png"
@@ -505,6 +520,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Web监听器的用途"><span class="nav-number">1.</span> <span class="nav-text">Web监听器的用途</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在xml中注册"><span class="nav-number">2.</span> <span class="nav-text">在xml中注册</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优先级"><span class="nav-number">3.</span> <span class="nav-text">优先级</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
