@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="notes," />
+  <meta name="keywords" content="-notes," />
 
 
 
@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="http协议的无状态性无状态是指当浏览器发送请求给服务器时，服务器响应客户端请求。但是当同一个浏览器再次发送请求给服务器时，服务器并不知道它是刚才那个服务器。">
-<meta name="keywords" content="notes">
+<meta name="description" content="线程组（ThreadGroup）就是由线程组成的管理线程的类，这个类是java.lang.ThreadGroup类。在Java中每一个线程都归属于某个线程组管理的一员，例如在主函数main()主工作流程中产生一个线程，则产生的线程属于main这个线程组管理的一员。定义一个线程组，通过以下代码可以实现。12ThreadGroup group=new ThreadGroup(&quot;group&quot;);Thre">
+<meta name="keywords" content="-notes">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jsp的状态管理">
-<meta property="og:url" content="http://PPPeanut.github.io/2017/04/15/jspState/index.html">
+<meta property="og:title" content="ThreadGroup的基本用法">
+<meta property="og:url" content="http://PPPeanut.github.io/2017/04/22/ThreadGroup/index.html">
 <meta property="og:site_name" content="JJ的博客">
-<meta property="og:description" content="http协议的无状态性无状态是指当浏览器发送请求给服务器时，服务器响应客户端请求。但是当同一个浏览器再次发送请求给服务器时，服务器并不知道它是刚才那个服务器。">
-<meta property="og:updated_time" content="2017-04-17T00:47:37.366Z">
+<meta property="og:description" content="线程组（ThreadGroup）就是由线程组成的管理线程的类，这个类是java.lang.ThreadGroup类。在Java中每一个线程都归属于某个线程组管理的一员，例如在主函数main()主工作流程中产生一个线程，则产生的线程属于main这个线程组管理的一员。定义一个线程组，通过以下代码可以实现。12ThreadGroup group=new ThreadGroup(&quot;group&quot;);Thre">
+<meta property="og:updated_time" content="2017-04-22T11:43:12.932Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jsp的状态管理">
-<meta name="twitter:description" content="http协议的无状态性无状态是指当浏览器发送请求给服务器时，服务器响应客户端请求。但是当同一个浏览器再次发送请求给服务器时，服务器并不知道它是刚才那个服务器。">
+<meta name="twitter:title" content="ThreadGroup的基本用法">
+<meta name="twitter:description" content="线程组（ThreadGroup）就是由线程组成的管理线程的类，这个类是java.lang.ThreadGroup类。在Java中每一个线程都归属于某个线程组管理的一员，例如在主函数main()主工作流程中产生一个线程，则产生的线程属于main这个线程组管理的一员。定义一个线程组，通过以下代码可以实现。12ThreadGroup group=new ThreadGroup(&quot;group&quot;);Thre">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://PPPeanut.github.io/2017/04/15/jspState/"/>
+  <link rel="canonical" href="http://PPPeanut.github.io/2017/04/22/ThreadGroup/"/>
 
 
 
 
 
-  <title> jsp的状态管理 | JJ的博客 </title>
+  <title> ThreadGroup的基本用法 | JJ的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -270,7 +270,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://PPPeanut.github.io/2017/04/15/jspState/">
+    <link itemprop="mainEntityOfPage" href="http://PPPeanut.github.io/2017/04/22/ThreadGroup/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Peanut">
@@ -291,7 +291,7 @@
             
             
               
-                jsp的状态管理
+                ThreadGroup的基本用法
               
             
           </h1>
@@ -306,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-15T21:28:27+08:00">
-                2017-04-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-22T19:32:10+08:00">
+                2017-04-22
               </time>
             
 
@@ -324,7 +324,7 @@
 
           
           
-             <span id="/2017/04/15/jspState/" class="leancloud_visitors" data-flag-title="jsp的状态管理">
+             <span id="/2017/04/22/ThreadGroup/" class="leancloud_visitors" data-flag-title="ThreadGroup的基本用法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -353,69 +353,14 @@
       
 
       
-        <p>http协议的无状态性<br>无状态是指当浏览器发送请求给服务器时，服务器响应客户端请求。<br>但是当同一个浏览器再次发送请求给服务器时，服务器并不知道它是刚才那个服务器。<br><a id="more"></a></p>
-<h2 id="保护用户的状态的两大机制"><a href="#保护用户的状态的两大机制" class="headerlink" title="保护用户的状态的两大机制"></a>保护用户的状态的两大机制</h2><ul>
-<li>Session</li>
-<li>Cookie</li>
-</ul>
-<h2 id="Session和Cookie的对比"><a href="#Session和Cookie的对比" class="headerlink" title="Session和Cookie的对比"></a>Session和Cookie的对比</h2><table>
-<thead>
-<tr>
-<th style="text-align:left">session</th>
-<th style="text-align:left">cookie</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">在<strong>服务器</strong>端保存用户信息</td>
-<td style="text-align:left">在<strong>客户端</strong>保存用户信息</td>
-</tr>
-<tr>
-<td style="text-align:left">session中保存的是<strong>Object</strong>类型</td>
-<td style="text-align:left">cookie保存的是<strong>String</strong>类型</td>
-</tr>
-<tr>
-<td style="text-align:left">随会话的结束而将其存储的数据<strong>销毁</strong></td>
-<td style="text-align:left">cookie可以<strong>长期</strong>保存在客户端</td>
-</tr>
-<tr>
-<td style="text-align:left">保存<strong>重要</strong>信息</td>
-<td style="text-align:left">保存<strong>不重要</strong>的信息</td>
-</tr>
-</tbody>
-</table>
-<h2 id="cookie的作用"><a href="#cookie的作用" class="headerlink" title="cookie的作用"></a>cookie的作用</h2><p>1.对特定对象的追踪<br>2.保存用户网页浏览记录和习惯<br>安全风险：容易泄露用户信息</p>
-<h2 id="jsp中创建与使用Cookie"><a href="#jsp中创建与使用Cookie" class="headerlink" title="jsp中创建与使用Cookie"></a>jsp中创建与使用Cookie</h2><figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建Cookie对象</span></div><div class="line">Cookie <span class="keyword">new</span><span class="type">Cookie</span>=<span class="keyword">new</span> <span class="type">Cookie</span>(<span class="keyword">String</span> key,Object value);</div><div class="line"><span class="comment">//写入Cookie对象</span></div><div class="line">response.addCookie(<span class="keyword">new</span><span class="type">Cookie</span>);</div><div class="line"><span class="comment">//读取Cookie</span></div><div class="line">Cookie[]cookies=request.getCookies();</div></pre></td></tr></table></figure>
-<h2 id="Cookie的常用方法"><a href="#Cookie的常用方法" class="headerlink" title="Cookie的常用方法"></a>Cookie的常用方法</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">方法名称</th>
-<th style="text-align:center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">void setMaxAge(int expiry)</td>
-<td style="text-align:center">设置cookie的有效期，以秒为单位</td>
-</tr>
-<tr>
-<td style="text-align:center">void setValue(String value)</td>
-<td style="text-align:center">在cookie创建后，对cookie进行赋值</td>
-</tr>
-<tr>
-<td style="text-align:center">String getName()</td>
-<td style="text-align:center">获取cookie的名称</td>
-</tr>
-<tr>
-<td style="text-align:center">String getValue()</td>
-<td style="text-align:center">获取cookie的值</td>
-</tr>
-<tr>
-<td style="text-align:center">int getMaxAge()</td>
-<td style="text-align:center">获取cookie的有效时间，以秒为单位</td>
-</tr>
-</tbody>
-</table>
+        <p>线程组（ThreadGroup）就是由线程组成的管理线程的类，这个类是java.lang.ThreadGroup类。<br>在Java中每一个线程都归属于某个线程组管理的一员，例如在主函数main()主工作流程中产生一个线程，则产生的线程属于main这个线程组管理的一员。<br>定义一个线程组，通过以下代码可以实现。<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ThreadGroup <span class="keyword">group</span>=<span class="literal">new</span> ThreadGroup(<span class="string">"group"</span>);</div><div class="line">ThreadGroup <span class="keyword">thread</span>=<span class="literal">new</span> ThreadGroup(<span class="keyword">group</span>,<span class="string">"the first thread of group"</span>);</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>所有线程都隶属于一个线程组。那可以是一个默认线程组，亦可是一个创建线程时明确指定的组。在创建之初，线程被限制到一个组里，而且不能改变到一个不同的组。每个应用都至少有一个线程从属于系统线程组。若创建多个线程而不指定一个组，它们就会自动归属于系统线程组。</p>
+<p>线程组也必须从属于其他线程组。必须在构建器里指定新线程组从属于哪个线程组。若在创建一个线程组的时候没有指定它的归属，则同样会自动成为系统线程组的一名属下。因此，一个应用程序中的所有线程组最终都会将系统线程组作为自己的“父”。</p>
+<p>之所以要提出“线程组”的概念，一般认为，是由于“安全”或者“保密”方面的理由。根据Arnold和Gosling的说法：“线程组中的线程可以修改组内的其他线程，包括那些位于分层结构最深处的。一个线程不能修改位于自己所在组或者下属组之外的任何线程”。</p>
+<h1 id="获取线程组中的信息"><a href="#获取线程组中的信息" class="headerlink" title="获取线程组中的信息"></a>获取线程组中的信息</h1><p>ThreadGroup类中有几个方法可用来获得线程组中有关线程和子线程的信息，这些信息包括线程组名字、线程组中可运行线程的数目、线程组中线程的最大优先级、线程组中各线程的名字等。这些方法有：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">activeCount</span><span class="params">()</span></span>; <span class="comment">// 获得当前线程组中线程数目,包括可运行和不可运行的 </span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">activeGroupCount</span><span class="params">()</span>； <span class="comment">//获得当前线程组中活动的子线程组的数目 </span></span></div><div class="line"><span class="keyword">public</span> <span class="keyword">int</span> enumerate（Thread list[]）; <span class="comment">//列举当前线程组中的线程 </span></div><div class="line"><span class="keyword">public</span> <span class="keyword">int</span> enumerate（ThreadGroup list[]）； <span class="comment">//列举当前线程组中的子线程组 </span></div><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">int</span> getMaxPriority（）; <span class="comment">//获得当前线程组中最大优先级 </span></div><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> String getName（）； <span class="comment">//获得当前线程组的名字 </span></div><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> ThreadGroup getParent（）; <span class="comment">//获得当前线程组的父线程组 </span></div><div class="line"><span class="keyword">public</span> <span class="keyword">boolean</span> parentOf（ThreadGroup g）;<span class="comment">//判断当前线程组是否为指定线程的父线程</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">boolean</span> isDaemon（）; <span class="comment">//判断当前线程组中是否有监护线程 </span></div><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> list（）; <span class="comment">//列出当前线程组中所有线程和子线程名</span></div></pre></td></tr></table></figure></p>
+<h1 id="对线程组的操作"><a href="#对线程组的操作" class="headerlink" title="对线程组的操作"></a>对线程组的操作</h1><p>ThreadGroup类中的方法都是以线程组为操作目标的。其中，包括设置线程组中线程的最大优先级方法、将线程组中所有线程挂起或恢复到可运行状态的方法、终止线程组中所 有线程的方法等。<br>对线程组进行操作的方法如下所示：<br><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> resume（）； <span class="comment">//使被挂起的当前组内的线程恢复到可运行状态 </span></div><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="function"><span class="keyword">void</span> <span class="title">setDaemon</span> <span class="params">(<span class="keyword">boolean</span> daemon)</span></span>; <span class="comment">//指定一个线程为当前线程组的监护线程 </span></div><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> setMaxPriority（<span class="keyword">int</span> pri）； <span class="comment">//设置当前线程组允许的最大优先级 </span></div><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> stop（）；<span class="comment">//终止当前线程组中所有线程 </span></div><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> suspend（）; <span class="comment">//挂起当前线程组中所有线程 </span></div><div class="line"><span class="keyword">public</span> String toStrinng（）; <span class="comment">//将当前线程组转换为String类的对象</span></div></pre></td></tr></table></figure></p>
+<p>参考地址:<a href="http://blog.csdn.net/i_lovefish/article/details/8042714" target="_blank" rel="external">ThreadGroup基本用法</a></p>
 
       
     </div>
@@ -445,7 +390,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/notes/" rel="tag"># notes</a>
+            <a href="/tags/notes/" rel="tag"># -notes</a>
           
         </div>
       
@@ -458,18 +403,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/16/servlet/" rel="next" title="Servlet">
-                <i class="fa fa-chevron-left"></i> Servlet
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/15/jspAction/" rel="prev" title="JSP指令与动作">
-                JSP指令与动作 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/22/HashMap-HashTable/" rel="prev" title="HashMap和HashTable的区别">
+                HashMap和HashTable的区别 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -590,7 +531,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#保护用户的状态的两大机制"><span class="nav-number">1.</span> <span class="nav-text">保护用户的状态的两大机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Session和Cookie的对比"><span class="nav-number">2.</span> <span class="nav-text">Session和Cookie的对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie的作用"><span class="nav-number">3.</span> <span class="nav-text">cookie的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp中创建与使用Cookie"><span class="nav-number">4.</span> <span class="nav-text">jsp中创建与使用Cookie</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie的常用方法"><span class="nav-number">5.</span> <span class="nav-text">Cookie的常用方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取线程组中的信息"><span class="nav-number">2.</span> <span class="nav-text">获取线程组中的信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对线程组的操作"><span class="nav-number">3.</span> <span class="nav-text">对线程组的操作</span></a></li></ol></div>
             
 
           </div>

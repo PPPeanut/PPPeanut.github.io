@@ -87,20 +87,17 @@
 
 
 
-<meta name="description" content="Web过滤器是一个服务器端的组件，它可以截取用户端的请求和响应信息，并对这些信息过滤。当过滤器存在时，用户不能直接访问web资源，需要经过过滤器过滤。">
+<meta name="description" content="HashMap基于哈希表的 Map 接口的实现。HashMap不是线程安全的，需要提供外同步。 HashTable继承Util包下的Dictionary类，和HashMap一样也实现了Map接口。任何非 null 对象都可以用作键或值。">
 <meta name="keywords" content="notes">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Web过滤器">
-<meta property="og:url" content="http://PPPeanut.github.io/2017/04/18/webFilter/index.html">
+<meta property="og:title" content="HashMap和HashTable的区别">
+<meta property="og:url" content="http://PPPeanut.github.io/2017/04/22/HashMap-HashTable/index.html">
 <meta property="og:site_name" content="JJ的博客">
-<meta property="og:description" content="Web过滤器是一个服务器端的组件，它可以截取用户端的请求和响应信息，并对这些信息过滤。当过滤器存在时，用户不能直接访问web资源，需要经过过滤器过滤。">
-<meta property="og:image" content="http://pppeanut.github.io/images/过滤器原理.png">
-<meta property="og:image" content="http://pppeanut.github.io/images/过滤器链.png">
-<meta property="og:updated_time" content="2017-04-19T09:25:49.958Z">
+<meta property="og:description" content="HashMap基于哈希表的 Map 接口的实现。HashMap不是线程安全的，需要提供外同步。 HashTable继承Util包下的Dictionary类，和HashMap一样也实现了Map接口。任何非 null 对象都可以用作键或值。">
+<meta property="og:updated_time" content="2017-04-22T14:49:54.033Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Web过滤器">
-<meta name="twitter:description" content="Web过滤器是一个服务器端的组件，它可以截取用户端的请求和响应信息，并对这些信息过滤。当过滤器存在时，用户不能直接访问web资源，需要经过过滤器过滤。">
-<meta name="twitter:image" content="http://pppeanut.github.io/images/过滤器原理.png">
+<meta name="twitter:title" content="HashMap和HashTable的区别">
+<meta name="twitter:description" content="HashMap基于哈希表的 Map 接口的实现。HashMap不是线程安全的，需要提供外同步。 HashTable继承Util包下的Dictionary类，和HashMap一样也实现了Map接口。任何非 null 对象都可以用作键或值。">
 
 
 
@@ -128,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://PPPeanut.github.io/2017/04/18/webFilter/"/>
+  <link rel="canonical" href="http://PPPeanut.github.io/2017/04/22/HashMap-HashTable/"/>
 
 
 
 
 
-  <title> Web过滤器 | JJ的博客 </title>
+  <title> HashMap和HashTable的区别 | JJ的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -273,7 +270,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://PPPeanut.github.io/2017/04/18/webFilter/">
+    <link itemprop="mainEntityOfPage" href="http://PPPeanut.github.io/2017/04/22/HashMap-HashTable/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Peanut">
@@ -294,7 +291,7 @@
             
             
               
-                Web过滤器
+                HashMap和HashTable的区别
               
             
           </h1>
@@ -309,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-18T22:14:22+08:00">
-                2017-04-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-22T18:51:20+08:00">
+                2017-04-22
               </time>
             
 
@@ -327,7 +324,7 @@
 
           
           
-             <span id="/2017/04/18/webFilter/" class="leancloud_visitors" data-flag-title="Web过滤器">
+             <span id="/2017/04/22/HashMap-HashTable/" class="leancloud_visitors" data-flag-title="HashMap和HashTable的区别">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -356,81 +353,38 @@
       
 
       
-        <p>Web过滤器是一个<strong>服务器端</strong>的组件，它可以截取用户端的请求和响应信息，并对这些信息过滤。当过滤器存在时，用户不能直接访问web资源，需要经过过滤器过滤。<br><a id="more"></a></p>
-<h1 id="过滤器原理"><a href="#过滤器原理" class="headerlink" title="过滤器原理"></a>过滤器原理</h1><p><img src="/images/过滤器原理.png" alt=""></p>
-<h1 id="实际应用场景"><a href="#实际应用场景" class="headerlink" title="实际应用场景"></a>实际应用场景</h1><p>1.对用户请求进行统一认证<br>2.编码转换<br>3.对用户发送的数据进行过滤替换<br>4.转换图像格式<br>5.对响应的内容进行压缩</p>
-<h1 id="过滤器声明周期"><a href="#过滤器声明周期" class="headerlink" title="过滤器声明周期"></a>过滤器声明周期</h1><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>过滤器的生命周期和Servlet相似:<br>实例化 → Web.xml<br>初始化 → init()<br>过滤 → doFilter()<br>销毁 → destroy()</p>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
-<li>init():初始化方法，Web容器创建过滤器实例后将调用这个方法。这个方法中可以读取web.xml文件中过滤器的参数。</li>
-<li>doFilter():完成过滤的操作，当用户访问与过滤器有关的URL的时候，Web容器先调用过滤器的doFilter()方法。FilterChain参数可以调用chain.doFilter方法，将请求传给下一个过滤器(或目的资源),或利用转发、重定向将请求转发到其他资源。</li>
-<li>destroy()Web容器在销毁过滤器实例钱调用该方法，在这个方法中可以释放过滤器占用的资源。(一般不会用到)</li>
-</ul>
-<h1 id="Web-xml中的配置"><a href="#Web-xml中的配置" class="headerlink" title="Web.xml中的配置"></a>Web.xml中的配置</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>Filter的名字<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>Filter完整的类名称<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></div><div class="line">   </div><div class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">description</span>&gt;</span>描述信息<span class="tag">&lt;/<span class="name">description</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>参数名称<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>参数的值<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">filter</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>Filter的名字<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>URL<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!--值为:REQUEST|INCLUDE|FORWARD|ERROR|ANYNC,未设定时默认为REQUEST--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">dispatcher</span>&gt;</span><span class="tag">&lt;/<span class="name">dispatcher</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="过滤器链"><a href="#过滤器链" class="headerlink" title="过滤器链"></a>过滤器链</h1><p><img src="/images/过滤器链.png" alt=""></p>
-<h1 id="过滤器分类"><a href="#过滤器分类" class="headerlink" title="过滤器分类"></a>过滤器分类</h1><p>类型的设定在xml文件dispatcher中定义，默认为request</p>
-<h2 id="Servlet2-5"><a href="#Servlet2-5" class="headerlink" title="Servlet2.5:"></a>Servlet2.5:</h2><p>request 用户直接访问页面时，Web容器将会调用过滤器<br>forward 目标资源是通过RequestDispatcher的forward访问时，该过滤器将被调用<br>include 目标资源是通过RequestDispatcher的include方法调用时，过滤器被调用<br>error 目标资源是通过声明式异常处理机制调用时，过滤器将被调用</p>
-<h2 id="Servlet3-0"><a href="#Servlet3-0" class="headerlink" title="Servlet3.0"></a>Servlet3.0</h2><p>async 支持异步处理</p>
-<h1 id="WebFilter"><a href="#WebFilter" class="headerlink" title="@WebFilter"></a>@WebFilter</h1><p>WebFIlter用于将一个类声明为过滤器，该注解将会在部署时被容器处理，容器将根据具体的属性配置将相应的类部署为过滤器。</p>
-<p>@WebFilter的常用属性</p>
-<table>
+        <h2 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h2><p>基于哈希表的 Map 接口的实现。HashMap不是线程安全的，需要提供外同步。</p>
+<h2 id="HashTable"><a href="#HashTable" class="headerlink" title="HashTable"></a>HashTable</h2><p>继承Util包下的Dictionary类，和HashMap一样也实现了Map接口。任何非 null 对象都可以用作键或值。<br><a id="more"></a></p>
+<h2 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h2><table>
 <thead>
 <tr>
-<th style="text-align:center">属性名</th>
-<th style="text-align:center">类型</th>
-<th style="text-align:center">常用属性</th>
+<th style="text-align:center">HashMap</th>
+<th style="text-align:center">HashTable</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">filterName</td>
-<td style="text-align:center">String</td>
-<td style="text-align:center">指定过滤器的name属性，等价于&lt;filter-name&gt;</td>
+<td style="text-align:center">线程不安全，方法不是Synchronize的要提供外同步</td>
+<td style="text-align:center">线程安全，方法是Synchronize的</td>
 </tr>
 <tr>
-<td style="text-align:center">value</td>
-<td style="text-align:center">String[]</td>
-<td style="text-align:center">该属性等价于urlPattern属性。但是两者不应该同时使用</td>
+<td style="text-align:center">允许有null键和null值</td>
+<td style="text-align:center">不允许null</td>
 </tr>
 <tr>
-<td style="text-align:center">urlPattern</td>
-<td style="text-align:center">String[]</td>
-<td style="text-align:center">指定一组过滤器的URL匹配模式。等价于&lt;url-pattern&gt;</td>
+<td style="text-align:center">效率高</td>
+<td style="text-align:center">效率低</td>
 </tr>
 <tr>
-<td style="text-align:center">servletNames</td>
-<td style="text-align:center">String[]</td>
-<td style="text-align:center">指定过滤器将应用于那些Servlet.取值是@WebServlet中的name属性的取值，或者是web.xml中&lt;servlet-name&gt;的取值</td>
-</tr>
-<tr>
-<td style="text-align:center">dispatcherTypes</td>
-<td style="text-align:center">DispatcherType</td>
-<td style="text-align:center">指定过滤器的转发模式。包括:REQUEST、FORWARD、INCLUDE、ERROR、ASYNC</td>
-</tr>
-<tr>
-<td style="text-align:center">initParams</td>
-<td style="text-align:center">WebInitParam[]</td>
-<td style="text-align:center">指定一组过滤器初始化参数，等价于&lt;init-param&gt;</td>
-</tr>
-<tr>
-<td style="text-align:center">asyncSupported</td>
-<td style="text-align:center">boolean</td>
-<td style="text-align:center">声明过滤器是否支持异步操作模式，等价于&lt;async-supported&gt;</td>
-</tr>
-<tr>
-<td style="text-align:center">description</td>
-<td style="text-align:center">String</td>
-<td style="text-align:center">该过滤器的描述信息，等价于&lt;description&gt;</td>
-</tr>
-<tr>
-<td style="text-align:center">displayName</td>
-<td style="text-align:center">String</td>
-<td style="text-align:center">该过滤器的显示名，通常配合工具使用，等价于&lt;display-name&gt;</td>
+<td style="text-align:center">取消了contains方法，改用containsvalue和containsKey方法</td>
+<td style="text-align:center">有contains方法方法</td>
 </tr>
 </tbody>
 </table>
-<figure class="highlight dust"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="xml">@WebFilter(servletNames=</span><span class="template-variable">&#123;"SimpleServlet"&#125;</span><span class="xml">,filterName="SimpleFilter")</span></div><div class="line">public class Test implements Filter<span class="template-variable">&#123;...&#125;</span><span class="xml"></span></div><div class="line"><span class="comment">&lt;!--等价于--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>SimpleFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>xxx<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">filter</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>SimpleFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>SimpleServlet<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="在filter中编码"><a href="#在filter中编码" class="headerlink" title="在filter中编码"></a>在filter中编码</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--在xml中设置编码的类型的值--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">init-param</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">param-name</span>&gt;</span>charset<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">param-value</span>&gt;</span>utf-8<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>```<br>//在diFilter()方法里面设置编码<br>String charset=config.getInitParameter(“charset”);<br>if(charset==null){<br>    charset=”utf-8”;<br>}<br>request.setCharacterEncoding(“charset”);</p>
+<h2 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h2><p>数据的存放都是无序的。</p>
+<h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><p>Hashtable 和 HashMap 都能通过values()方法返回一个 Collection ，然后进行遍历处理：<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">Collection</span> coll = <span class="meta">map</span>.values()<span class="comment">;  </span></div><div class="line"><span class="keyword">Iterator </span><span class="keyword">it </span>= coll.<span class="keyword">iterator(); </span> </div><div class="line"><span class="symbol">while</span> (<span class="keyword">it.hasNext()) </span>&#123;  </div><div class="line"><span class="keyword">String </span>obj = (<span class="keyword">String) </span><span class="keyword">it.next(); </span> </div><div class="line"><span class="symbol">System.out.println</span>(obj)<span class="comment">;  </span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>两者也都可以通过 entrySet() 方法返回一个 Set ， 然后进行遍历处理：<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">Set</span> set = table.entrySet()<span class="comment">;  </span></div><div class="line"><span class="keyword">Iterator </span><span class="keyword">it </span>= set.<span class="keyword">iterator(); </span> </div><div class="line"><span class="symbol">while</span> (<span class="keyword">it.hasNext()) </span>&#123;  </div><div class="line"><span class="symbol">Entry</span> <span class="meta">entry</span> = (<span class="meta">Entry</span>) <span class="keyword">it.next(); </span> </div><div class="line"><span class="symbol">System.out.println</span>(<span class="meta">entry</span>.getKey() + <span class="string">" - "</span> + <span class="meta">entry</span>.getValue())<span class="comment">;  </span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Hashtable比HashMap多一个elements方法<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Enumeration em = table.elements();  </div><div class="line"><span class="built_in">while</span> (em.hasMoreElements()) &#123;  </div><div class="line"><span class="keyword">String</span> obj = (<span class="keyword">String</span>) em.nextElement();  </div><div class="line">System.out.<span class="built_in">println</span>(obj);   </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -473,8 +427,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/20/webListener/" rel="next" title="Web监听器">
-                <i class="fa fa-chevron-left"></i> Web监听器
+              <a href="/2017/04/22/ThreadGroup/" rel="next" title="ThreadGroup的基本用法">
+                <i class="fa fa-chevron-left"></i> ThreadGroup的基本用法
               </a>
             
           </div>
@@ -483,8 +437,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/16/servlet/" rel="prev" title="Servlet">
-                Servlet <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/22/BinarySearch/" rel="prev" title="二分查找法">
+                二分查找法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -605,7 +559,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#过滤器原理"><span class="nav-number">1.</span> <span class="nav-text">过滤器原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实际应用场景"><span class="nav-number">2.</span> <span class="nav-text">实际应用场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#过滤器声明周期"><span class="nav-number">3.</span> <span class="nav-text">过滤器声明周期</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">3.1.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">3.2.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Web-xml中的配置"><span class="nav-number">4.</span> <span class="nav-text">Web.xml中的配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#过滤器链"><span class="nav-number">5.</span> <span class="nav-text">过滤器链</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#过滤器分类"><span class="nav-number">6.</span> <span class="nav-text">过滤器分类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet2-5"><span class="nav-number">6.1.</span> <span class="nav-text">Servlet2.5:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet3-0"><span class="nav-number">6.2.</span> <span class="nav-text">Servlet3.0</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WebFilter"><span class="nav-number">7.</span> <span class="nav-text">@WebFilter</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在filter中编码"><span class="nav-number">8.</span> <span class="nav-text">在filter中编码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap"><span class="nav-number">1.</span> <span class="nav-text">HashMap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashTable"><span class="nav-number">2.</span> <span class="nav-text">HashTable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同点"><span class="nav-number">3.</span> <span class="nav-text">不同点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相同点"><span class="nav-number">4.</span> <span class="nav-text">相同点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遍历"><span class="nav-number">5.</span> <span class="nav-text">遍历</span></a></li></ol></div>
             
 
           </div>

@@ -87,17 +87,23 @@
 
 
 
-<meta name="description" content="http协议的无状态性无状态是指当浏览器发送请求给服务器时，服务器响应客户端请求。但是当同一个浏览器再次发送请求给服务器时，服务器并不知道它是刚才那个服务器。">
+<meta name="description" content="互联网协议的初步理解，待补充完善。">
 <meta name="keywords" content="notes">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jsp的状态管理">
-<meta property="og:url" content="http://PPPeanut.github.io/2017/04/15/jspState/index.html">
+<meta property="og:title" content="互联网协议(偏理解)">
+<meta property="og:url" content="http://PPPeanut.github.io/2017/04/21/InternetProtocol2/index.html">
 <meta property="og:site_name" content="JJ的博客">
-<meta property="og:description" content="http协议的无状态性无状态是指当浏览器发送请求给服务器时，服务器响应客户端请求。但是当同一个浏览器再次发送请求给服务器时，服务器并不知道它是刚才那个服务器。">
-<meta property="og:updated_time" content="2017-04-17T00:47:37.366Z">
+<meta property="og:description" content="互联网协议的初步理解，待补充完善。">
+<meta property="og:image" content="http://pppeanut.github.io/images/帧.png">
+<meta property="og:image" content="http://pppeanut.github.io/images/IP数据包.png">
+<meta property="og:image" content="http://pppeanut.github.io/images/UDP数据包.png">
+<meta property="og:image" content="http://pppeanut.github.io/images/应用层.png">
+<meta property="og:image" content="http://pppeanut.github.io/images/DHCP数据包.png">
+<meta property="og:updated_time" content="2017-04-22T02:45:18.950Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jsp的状态管理">
-<meta name="twitter:description" content="http协议的无状态性无状态是指当浏览器发送请求给服务器时，服务器响应客户端请求。但是当同一个浏览器再次发送请求给服务器时，服务器并不知道它是刚才那个服务器。">
+<meta name="twitter:title" content="互联网协议(偏理解)">
+<meta name="twitter:description" content="互联网协议的初步理解，待补充完善。">
+<meta name="twitter:image" content="http://pppeanut.github.io/images/帧.png">
 
 
 
@@ -125,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://PPPeanut.github.io/2017/04/15/jspState/"/>
+  <link rel="canonical" href="http://PPPeanut.github.io/2017/04/21/InternetProtocol2/"/>
 
 
 
 
 
-  <title> jsp的状态管理 | JJ的博客 </title>
+  <title> 互联网协议(偏理解) | JJ的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -270,7 +276,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://PPPeanut.github.io/2017/04/15/jspState/">
+    <link itemprop="mainEntityOfPage" href="http://PPPeanut.github.io/2017/04/21/InternetProtocol2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Peanut">
@@ -291,7 +297,7 @@
             
             
               
-                jsp的状态管理
+                互联网协议(偏理解)
               
             
           </h1>
@@ -306,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-15T21:28:27+08:00">
-                2017-04-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-21T22:12:36+08:00">
+                2017-04-21
               </time>
             
 
@@ -324,7 +330,7 @@
 
           
           
-             <span id="/2017/04/15/jspState/" class="leancloud_visitors" data-flag-title="jsp的状态管理">
+             <span id="/2017/04/21/InternetProtocol2/" class="leancloud_visitors" data-flag-title="互联网协议(偏理解)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -353,69 +359,34 @@
       
 
       
-        <p>http协议的无状态性<br>无状态是指当浏览器发送请求给服务器时，服务器响应客户端请求。<br>但是当同一个浏览器再次发送请求给服务器时，服务器并不知道它是刚才那个服务器。<br><a id="more"></a></p>
-<h2 id="保护用户的状态的两大机制"><a href="#保护用户的状态的两大机制" class="headerlink" title="保护用户的状态的两大机制"></a>保护用户的状态的两大机制</h2><ul>
-<li>Session</li>
-<li>Cookie</li>
+        <p>互联网协议的初步理解，待补充完善。<br><a id="more"></a></p>
+<h1 id="五层模型"><a href="#五层模型" class="headerlink" title="五层模型"></a>五层模型</h1><p>现在的互联网体系结构综合了ISO的七层模型和TCP/IP的四层模型，采用的是五层协议的体系结构。从上到下分别是应用层、运输层、网络层、链路层、物理层。越往下越接近硬件，越往上越接近用户。每一层都有其协议来实现该层的功能，下层协议为上层协议提供服务，上层不需要知道下层是如何实现功能的。</p>
+<h2 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h2><p>物理层上所传送的数据的单位是比特，也就是0/1组成的电信号。该层考虑的是用多大的电压代表0或1、接收方如何识别发送发所发送的比特，以及连接电缆如何连接的问题。其实在物理层下还有第0层，代表的是一些物理媒介，如双绞线、同轴电缆、光缆、无线信道等。</p>
+<h2 id="链路层"><a href="#链路层" class="headerlink" title="链路层"></a>链路层</h2><h3 id="帧"><a href="#帧" class="headerlink" title="帧"></a>帧</h3><p>链路层的作用是规定物理层的0/1信号如何解读。其数据的单元格式是帧:<br><img src="/images/帧.png" alt=""><br>每一帧包括数据头(Head)和数据(Data)。Head包括发送者、接受者、数据类型等信息，Data包括具体内容。</p>
+<h3 id="MAC地址"><a href="#MAC地址" class="headerlink" title="MAC地址"></a>MAC地址</h3><p>每一个MAC地址都是独一无二的，它是每块网卡出厂时拥有的，而MAC地址，就是链路层中数据包发送和接收的地址。</p>
+<h3 id="广播"><a href="#广播" class="headerlink" title="广播"></a>广播</h3><p>发送方需要知道接收方的MAC地址，然后通过广播的形式发送出去。广播的形式指的是发送方所在的子网络的所有用户都会受到该数据包，然后对比自己的MAC地址，如果相同就接收，不同则丢掉该包。</p>
+<h2 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h2><h3 id="IP数据包"><a href="#IP数据包" class="headerlink" title="IP数据包"></a>IP数据包</h3><p>IP数据包是网络层的数据格式，当IP数据包传给下方的链路层的时候，整个数据包作为链路层的Data部分。<br><img src="/images/IP数据包.png" alt=""></p>
+<h3 id="IP协议"><a href="#IP协议" class="headerlink" title="IP协议"></a>IP协议</h3><p>当发送和接收双方不在一个子网络时继续采用广播的方式是不现实的，因为计算机的数量太多，如果对每一台计算机都发送数据，后果会很严重，因此网络层采用IP协议。它规定了每台计算机除了拥有MAC地址外，还有一种IP地址。除此之外，还需要用的一个参数名为子网掩码。<br>IP地址是由32个二进制组成。一般用4个十进制数表示，从0.0.0.0一直到255.255.255.255。子网掩码的形式和IP地址一样，但是只能为0或1。<br>当一台计算机发送数据时，需要判断它的接收方是否在子网络中。IP地址分为两部分，一部分是网络部分，一部分是主机部分，同一个子网络的网络部分的数值是相同的。此时要用到子网掩码，子网掩码的网络部分为1，主机部分为0，因此要判断是否在同一个子网络，只需要将发送方和接收方的计算机的IP地址和子网掩码进行与运算，结果相同则在同一子网络。</p>
+<h3 id="ARP协议"><a href="#ARP协议" class="headerlink" title="ARP协议"></a>ARP协议</h3><p>当两台主机在同一子网络中，且发送方只知道对方的IP地址，想要得到对方的MAC地址时，可以用ARP协议。ARP协议也是发出一个数据包，其中包含它所要查询主机的IP地址，在对方的MAC地址这一栏，填的是FF:FF:FF:FF:FF:FF，表示这是一个”广播”地址。它所在子网络的每一台主机，都会收到这个数据包，从中取出IP地址，与自身的IP地址进行比较。如果两者相同，都做出回复，向对方报告自己的MAC地址，否则就丢弃这个包。</p>
+<h2 id="运输层"><a href="#运输层" class="headerlink" title="运输层"></a>运输层</h2><h3 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h3><p>MAC地址和IP地址确定了通信双方的主机，但是一台主机上有很多的程序，因此要用一种方法确定交互的程序，用端口port来表示。端口是从0到65535之间的一个整数，正好是16位的二进制。一般来讲0到1023的端口被知名的服务器占用了，只能选择其他的端口使用。</p>
+<h3 id="UDP协议"><a href="#UDP协议" class="headerlink" title="UDP协议"></a>UDP协议</h3><p>UDP数据包也是由Head和Data组成。<br><img src="/images/UDP数据包.png" alt=""><br>UDP数据包，”标头”部分一共只有8个字节，总长度不超过65,535字节，正好放进一个IP数据包。</p>
+<h3 id="TCP协议"><a href="#TCP协议" class="headerlink" title="TCP协议"></a>TCP协议</h3><p>UDP协议的优点是比较简单，容易实现，但是缺点是可靠性较差，一旦数据包发出，无法知道对方是否收到。为了解决这个问题，提高网络可靠性，TCP协议就诞生了。这个协议非常复杂，但可以近似认为，它就是有确认机制的UDP协议，每发出一个数据包都要求确认。如果有一个数据包遗失，就收不到确认，发出方就知道有必要重发这个数据包了。</p>
+<p>TCP数据包和UDP数据包一样，都是内嵌在IP数据包的”数据”部分。TCP数据包没有长度限制，理论上可以无限长，但是为了保证网络的效率，通常TCP数据包的长度不会超过IP数据包的长度，以确保单个TCP数据包不必再分割。</p>
+<h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2><p>“应用层”的作用，就是规定应用程序的数据格式。TCP协议可以为各种各样的程序传递数据，比如Email、WWW、FTP等等。因此，必须有不同协议规定电子邮件、网页、FTP数据的格式，这些应用程序协议就构成了”应用层”。它的数据存放在TCP数据包的Data部分。<br><img src="/images/应用层.png" alt=""></p>
+<h3 id="DHCP协议"><a href="#DHCP协议" class="headerlink" title="DHCP协议"></a>DHCP协议</h3><p>DHCP协议是应用层协议，建立在UDP协议之上。用于动态分配IP地址和相关的网络参数。<br><img src="/images/DHCP数据包.png" alt=""><br>1.最前面的”以太网标头”，设置发出方（本机）的MAC地址和接收方（DHCP服务器）的MAC地址。前者就是本机网卡的MAC地址，后者这时不知道，就填入一个广播地址：FF-FF-FF-FF-FF-FF。</p>
+<p>2.后面的”IP标头”，设置发出方的IP地址和接收方的IP地址。这时，对于这两者，本机都不知道。于是，发出方的IP地址就设为0.0.0.0，接收方的IP地址设为255.255.255.255。</p>
+<p>3.最后的”UDP标头”，设置发出方的端口和接收方的端口。这一部分是DHCP协议规定好的，发出方是68端口，接收方是67端口。</p>
+<p>4.这个数据包构造完成后，就可以发出了。以太网是广播发送，当看到发出方IP地址是0.0.0.0，接收方是255.255.255.255，于是DHCP服务器知道”这个包是发给我的”，而其他计算机就可以丢弃这个包。<br>5.接下来，DHCP服务器读出这个包的数据内容，分配好IP地址，发送回去一个”DHCP响应”数据包。这个响应包的结构也是类似的，以太网标头的MAC地址是双方的网卡地址，IP标头的IP地址是DHCP服务器的IP地址(发出方)和255.255.255.255(接收方)，UDP标头的端口是67(发出方)和68(接收方),分配给请求端的IP地址和本网络的具体参数则包含在Data部分。新加入的计算机收到这个响应包，于是就知道了自己的IP地址、子网掩码、网关地址、DNS服务器等等参数。</p>
+<p>因此计算机上网需要4个参数:</p>
+<ul>
+<li>本机的IP地址</li>
+<li>子网掩码</li>
+<li>网关的IP地址</li>
+<li>DNS的IP地址 </li>
 </ul>
-<h2 id="Session和Cookie的对比"><a href="#Session和Cookie的对比" class="headerlink" title="Session和Cookie的对比"></a>Session和Cookie的对比</h2><table>
-<thead>
-<tr>
-<th style="text-align:left">session</th>
-<th style="text-align:left">cookie</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">在<strong>服务器</strong>端保存用户信息</td>
-<td style="text-align:left">在<strong>客户端</strong>保存用户信息</td>
-</tr>
-<tr>
-<td style="text-align:left">session中保存的是<strong>Object</strong>类型</td>
-<td style="text-align:left">cookie保存的是<strong>String</strong>类型</td>
-</tr>
-<tr>
-<td style="text-align:left">随会话的结束而将其存储的数据<strong>销毁</strong></td>
-<td style="text-align:left">cookie可以<strong>长期</strong>保存在客户端</td>
-</tr>
-<tr>
-<td style="text-align:left">保存<strong>重要</strong>信息</td>
-<td style="text-align:left">保存<strong>不重要</strong>的信息</td>
-</tr>
-</tbody>
-</table>
-<h2 id="cookie的作用"><a href="#cookie的作用" class="headerlink" title="cookie的作用"></a>cookie的作用</h2><p>1.对特定对象的追踪<br>2.保存用户网页浏览记录和习惯<br>安全风险：容易泄露用户信息</p>
-<h2 id="jsp中创建与使用Cookie"><a href="#jsp中创建与使用Cookie" class="headerlink" title="jsp中创建与使用Cookie"></a>jsp中创建与使用Cookie</h2><figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建Cookie对象</span></div><div class="line">Cookie <span class="keyword">new</span><span class="type">Cookie</span>=<span class="keyword">new</span> <span class="type">Cookie</span>(<span class="keyword">String</span> key,Object value);</div><div class="line"><span class="comment">//写入Cookie对象</span></div><div class="line">response.addCookie(<span class="keyword">new</span><span class="type">Cookie</span>);</div><div class="line"><span class="comment">//读取Cookie</span></div><div class="line">Cookie[]cookies=request.getCookies();</div></pre></td></tr></table></figure>
-<h2 id="Cookie的常用方法"><a href="#Cookie的常用方法" class="headerlink" title="Cookie的常用方法"></a>Cookie的常用方法</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">方法名称</th>
-<th style="text-align:center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">void setMaxAge(int expiry)</td>
-<td style="text-align:center">设置cookie的有效期，以秒为单位</td>
-</tr>
-<tr>
-<td style="text-align:center">void setValue(String value)</td>
-<td style="text-align:center">在cookie创建后，对cookie进行赋值</td>
-</tr>
-<tr>
-<td style="text-align:center">String getName()</td>
-<td style="text-align:center">获取cookie的名称</td>
-</tr>
-<tr>
-<td style="text-align:center">String getValue()</td>
-<td style="text-align:center">获取cookie的值</td>
-</tr>
-<tr>
-<td style="text-align:center">int getMaxAge()</td>
-<td style="text-align:center">获取cookie的有效时间，以秒为单位</td>
-</tr>
-</tbody>
-</table>
+<h3 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h3><p>我们浏览器使用的是HTTP协议，最常用的两种方法使GET和POST，GET用于信息的获取和查询，POST用于可能会修改服务器上资源的请求。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>待….</p>
+<p>参考地址:<a href="http://mp.weixin.qq.com/s?__biz=MzIyMDEzMTA2MQ==&amp;mid=2651148729&amp;idx=1&amp;sn=e4dbe840957d94c746c0c9ad228951f6&amp;chksm=8c214a23bb56c3351dc3370ad4b45469e5b5d85a2d9e92071fd769f39b73f11e0148fd7ad73a&amp;mpshare=1&amp;scene=1&amp;srcid=0421JgVAYlVGh6wVlUi1RjK0#rd" target="_blank" rel="external">互联网协议入门</a><br>参考地址:<a href="http://blog.csdn.net/bilter/article/details/6999511" target="_blank" rel="external"> IP地址，子网掩码、默认网关，DNS服务器是什么意思?</a></p>
 
       
     </div>
@@ -458,8 +429,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/16/servlet/" rel="next" title="Servlet">
-                <i class="fa fa-chevron-left"></i> Servlet
+              <a href="/2017/04/22/BinarySearch/" rel="next" title="二分查找法">
+                <i class="fa fa-chevron-left"></i> 二分查找法
               </a>
             
           </div>
@@ -468,8 +439,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/15/jspAction/" rel="prev" title="JSP指令与动作">
-                JSP指令与动作 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/21/InternetProtocol/" rel="prev" title="计算机网络(偏底层)">
+                计算机网络(偏底层) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -590,7 +561,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#保护用户的状态的两大机制"><span class="nav-number">1.</span> <span class="nav-text">保护用户的状态的两大机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Session和Cookie的对比"><span class="nav-number">2.</span> <span class="nav-text">Session和Cookie的对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie的作用"><span class="nav-number">3.</span> <span class="nav-text">cookie的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp中创建与使用Cookie"><span class="nav-number">4.</span> <span class="nav-text">jsp中创建与使用Cookie</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie的常用方法"><span class="nav-number">5.</span> <span class="nav-text">Cookie的常用方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#五层模型"><span class="nav-number">1.</span> <span class="nav-text">五层模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#物理层"><span class="nav-number">1.1.</span> <span class="nav-text">物理层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链路层"><span class="nav-number">1.2.</span> <span class="nav-text">链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#帧"><span class="nav-number">1.2.1.</span> <span class="nav-text">帧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MAC地址"><span class="nav-number">1.2.2.</span> <span class="nav-text">MAC地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#广播"><span class="nav-number">1.2.3.</span> <span class="nav-text">广播</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络层"><span class="nav-number">1.3.</span> <span class="nav-text">网络层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IP数据包"><span class="nav-number">1.3.1.</span> <span class="nav-text">IP数据包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP协议"><span class="nav-number">1.3.2.</span> <span class="nav-text">IP协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARP协议"><span class="nav-number">1.3.3.</span> <span class="nav-text">ARP协议</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运输层"><span class="nav-number">1.4.</span> <span class="nav-text">运输层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#端口"><span class="nav-number">1.4.1.</span> <span class="nav-text">端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UDP协议"><span class="nav-number">1.4.2.</span> <span class="nav-text">UDP协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP协议"><span class="nav-number">1.4.3.</span> <span class="nav-text">TCP协议</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用层"><span class="nav-number">1.5.</span> <span class="nav-text">应用层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DHCP协议"><span class="nav-number">1.5.1.</span> <span class="nav-text">DHCP协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP协议"><span class="nav-number">1.5.2.</span> <span class="nav-text">HTTP协议</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.6.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
             
 
           </div>
