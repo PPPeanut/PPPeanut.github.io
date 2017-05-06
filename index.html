@@ -270,6 +270,279 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://PPPeanut.github.io/2017/05/07/JDBC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Peanut">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/123.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JJ的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/05/07/JDBC/" itemprop="url">
+                  JDBC的简单应用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-07T00:06:55+08:00">
+                2017-05-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/05/07/JDBC/" class="leancloud_visitors" data-flag-title="JDBC的简单应用">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<h1 id="JDBC编程步骤"><a href="#JDBC编程步骤" class="headerlink" title="JDBC编程步骤"></a>JDBC编程步骤</h1><h5 id="1-加载驱动程序"><a href="#1-加载驱动程序" class="headerlink" title="1.加载驱动程序:"></a>1.加载驱动程序:</h5><p>  <code>Class.forName(driverClass)</code><br>  加载Mysql驱动:<br>  <code>Class.forName(&quot;com.mysql.jdbc.Driver&quot;)</code>;<br>  加载Oracle驱动:<br>  <code>Class.forName(&quot;oracle.jdbc.driver.OracleDriver&quot;)</code></p>
+<h5 id="2-获得数据库连接"><a href="#2-获得数据库连接" class="headerlink" title="2.获得数据库连接:"></a>2.获得数据库连接:</h5><p><code>DriverManager.getConnection(&quot;jdbc:mysql://127.0.0.1:3306/数据库名&quot;,&quot;数据库账号&quot;，&quot;数据库密码&quot;);</code><br>3306为Mysql的端口号</p>
+<h5 id="3-1可以通过创建Statement对象"><a href="#3-1可以通过创建Statement对象" class="headerlink" title="3.1可以通过创建Statement对象:"></a>3.1可以通过创建Statement对象:</h5><p> <code>conn.createStatement();</code></p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="type">Statement</span> <span class="built_in">stmt</span>=conn.createStatement();</div><div class="line"><span class="type">ResultSet</span> rs=<span class="built_in">stmt</span>.executeQuery(<span class="string">"select user_name,age from imooc_goddess"</span>);</div><div class="line"><span class="keyword">while</span>(rs.next())&#123;</div><div class="line">    <span class="type">System</span>.<span class="keyword">out</span>.println(rs.getString(<span class="string">"user_name"</span>));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="3-2可以通过预编译PrepareStatement对象"><a href="#3-2可以通过预编译PrepareStatement对象" class="headerlink" title="3.2可以通过预编译PrepareStatement对象:"></a>3.2可以通过预编译PrepareStatement对象:</h5><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">String sql=<span class="string">" insert into imooc_goddess (name,age) values(?,?) "</span><span class="comment">;</span></div><div class="line">PreparedStatement ptmt=conn.prepareStatement(sql)<span class="comment">;</span></div><div class="line">ptmt.setString(<span class="number">1</span>,<span class="string">"user_name"</span>)<span class="comment">;</span></div><div class="line">ptmt.setInt(<span class="number">2</span>,<span class="number">20</span>)<span class="comment">;</span></div><div class="line">ptmt.execute()<span class="comment">;</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://PPPeanut.github.io/2017/04/29/jvm-memory/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Peanut">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/123.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JJ的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/29/jvm-memory/" itemprop="url">
+                  jvm内存模型
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-29T12:08:11+08:00">
+                2017-04-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/04/29/jvm-memory/" class="leancloud_visitors" data-flag-title="jvm内存模型">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>JVM定义了若干个程序执行期间使用的数据区域。这个区域里的一些数据在JVM启动的时候创建，在JVM退出的时候销毁。而其他的数据依赖于每一个线程，在线程创建时创建，在线程退出时销毁。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/29/jvm-memory/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://PPPeanut.github.io/2017/04/24/SingletonPattern/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1356,278 +1629,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://PPPeanut.github.io/2017/04/16/servlet/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Peanut">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/123.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JJ的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/16/servlet/" itemprop="url">
-                  Servlet
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-16T09:21:06+08:00">
-                2017-04-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/04/16/servlet/" class="leancloud_visitors" data-flag-title="Servlet">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>servlet是在服务器上运行的小程序。一个servlet就是一个java类，并且可以通过“请求-响应”编程模型来访问的这个驻留在服务器内存里的servlet程序。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/16/servlet/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://PPPeanut.github.io/2017/04/15/jspState/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Peanut">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/123.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JJ的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/15/jspState/" itemprop="url">
-                  jsp的状态管理
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-15T21:28:27+08:00">
-                2017-04-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/04/15/jspState/" class="leancloud_visitors" data-flag-title="jsp的状态管理">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>http协议的无状态性<br>无状态是指当浏览器发送请求给服务器时，服务器响应客户端请求。<br>但是当同一个浏览器再次发送请求给服务器时，服务器并不知道它是刚才那个服务器。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/15/jspState/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1677,7 +1678,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1690,7 +1691,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
